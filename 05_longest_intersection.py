@@ -1,0 +1,15 @@
+longest_intersection = {}
+
+for _ in range(int(input())):
+    first_range, second_range = [r.split(',') for r in input().split('-')]
+
+    first_set = set(range(int(first_range[0]), int(first_range[1]) + 1))
+    second_set = set(range(int(second_range[0]), int(second_range[1]) + 1))
+
+    intersection = first_set.intersection(second_set)
+
+    if len(intersection) > len(longest_intersection):
+        longest_intersection = intersection
+
+print(f"Longest intersection is [{', '.join(str(x) for x in longest_intersection)}] with length"
+      f" {len(longest_intersection)}")
